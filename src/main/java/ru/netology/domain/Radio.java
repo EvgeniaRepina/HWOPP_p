@@ -22,8 +22,9 @@ public class Radio {
     public int increaseCurrentStation() {
         if (currentStation < 9) {
             currentStation = currentStation + 1;
+            return currentStation;
         }
-        if (currentStation >= 9) {
+        if (currentStation == 9) {
             currentStation = 0;
         }
         return currentStation;
@@ -32,8 +33,10 @@ public class Radio {
     public int decreaseCurrentStation() {
         if (currentStation > 0) {
             currentStation = currentStation - 1;
+            return currentStation;
         }
-        if (currentStation <= 0) {
+
+        if (currentStation == 0) {
             currentStation = 9;
         }
         return currentStation;
@@ -69,5 +72,10 @@ public class Radio {
         this.currentSoundVolume = newCurrentSoundVolume;
 
     }
+    //____________________для покрытия______________________
+    public void setCurrentStationForCoverage(int newCurrentStation) {
 
+        this.currentStation = newCurrentStation;
+
+    }
 }
